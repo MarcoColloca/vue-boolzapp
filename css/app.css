@@ -138,6 +138,7 @@ body{
     max-width: 347px;
     border-radius: 18px;
     display: flex;
+    justify-content: space-between;
     font-size: 18px;
 }
 
@@ -148,6 +149,11 @@ body{
     margin-right: 30px;
     margin-left: 5px;
 }
+
+.app__chat__message--box__text--right > p {
+    margin-right: 30px;
+}
+
 
 .app__chat__message--box__text--left{
     background-color: #FFFFFF;
@@ -612,7 +618,7 @@ body{
 
     .app__chat__message--box .app__chat__message--box__text--right,
     .app__chat__message--box .app__chat__message--box__text--left{
-        max-width: 620px;
+        max-width: 420px;
     }
 
     .app__chat__message--box .app__chat__message--box__text--right{
