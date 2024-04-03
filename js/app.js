@@ -192,6 +192,9 @@ createApp({
             lastAccess: 12,
 
             messageText: '',
+
+            searchBarText: '',
+
         }
     },
 

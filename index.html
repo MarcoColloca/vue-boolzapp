@@ -53,7 +53,12 @@
                 <!-- Sidebar Searchbar (-Hidden in Tablet View) -->
                 <div class="app__sidebar__searchbar">
                     <i class="fa-solid fa-magnifying-glass app__sidebar__searchbar__icon"></i>
-                    <input class="app__sidebar__searchbar__text-box" type="search" placeholder=" Cerca o inizia una nuova chat">
+                    <input 
+                     class="app__sidebar__searchbar__text-box" 
+                     type="search" 
+                     placeholder=" Cerca o inizia una nuova chat"
+                     v-model="searchBarText"
+                    >
                 </div>
 
                 <!-- Sidebar Contacts -->
