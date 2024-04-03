@@ -189,6 +189,7 @@ createApp({
 
             currentObjectIndex: 0,
             lastAccess: 12,
+            currentMessageIndex: 0,
         }
     },
 
@@ -199,7 +200,8 @@ createApp({
 
             this.currentObjectIndex = index;
 
-        }
+        },
+
 
     }
 

@@ -67,7 +67,7 @@
                         <img class="app__sidebar__contacts__card__img" :src="contact.avatar"  alt="">
                         <div class="app__sidebar__contacts__card__name">
                             <p class="app__sidebar__contacts__card__name__nickname">{{contact.name}}</p>
-                            <p class="app__sidebar__contacts__card__name__info">{{contact.messages[0].message}}</p>            
+                            <p class="app__sidebar__contacts__card__name__info">ultimo messaggio inviato</p>            
                         </div>
                         <p class="app__sidebar__contacts__card__time">{{lastAccess.toFixed(2)}} </p>
                     </div> 
@@ -115,11 +115,12 @@
                  :class="i === currentObjectIndex ? 'active' : '' "
                 >
                     <!-- Right Textbox -->
-                    <div class="app__chat__message--box__text--right"
-                                        
+                    <div                      
+                     v-for="(message, i) in contact.messages"
+                     :class="message.status === 'received' ? 'app__chat__message--box__text--right' : 'app__chat__message--box__text--left'"
                     >
                         <!-- message text -->
-                        <p>Hai portato a spasso il cane?</p>
+                        <p>{{ contact.messages[i].message }}</p>
                         
                         <!-- Message Time -->
                         <div class="app__chat__message--box__text__time">
@@ -152,41 +153,6 @@
                         </div>
                     </div>
 
-                    <!-- Left Textbox -->
-                    <div class="app__chat__message--box__text--left"
-                    
-                    >
-                        <!-- message text -->
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos dolores architecto asperiores eum omnis saepe possimus suscipit corporis eligendi, officiis perspiciatis ullam doloribus neque voluptatem eaque?</p>
-                        
-                        <!-- Message Time -->
-                        <div class="app__chat__message--box__text__time">
-                            <i class="fa-solid fa-chevron-down chat-menu"></i>
-
-                            <ul class="chat-menu-content">
-                                <li>
-                                    <a href="#">Copia</a>
-                                </li>
-                                <li>
-                                    <a href="#">Elimina</a>
-                                </li>
-
-                                <li>
-                                    <a href="#">Fissa</a>
-                                </li>
-
-                                <li>
-                                    <a href="#">Inoltra</a>
-                                </li>
-
-                                <li>
-                                    <a href="#">Info</a>
-                                </li>
-                            </ul>
-
-                            <p>16:12</p>
-                        </div>
-                    </div>
                 </div>
 
                 <!-- App Chat Message Input -->
