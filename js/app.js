@@ -205,19 +205,43 @@ createApp({
         },
 
 
-        addSentMessage(){
+        newMessage(){
+
+            const contacts = this.contacts;
+            const currentObjectIndex = this.currentObjectIndex;
+            const messageText = this.messageText;
 
 
-            if(this.messageText !== ''){
-                
+            if(messageText !== ''){
+
+
+                // creazione di un oggetto che corrisponde ad un messaggio inviato
                 const newSentMessage = {
                     date: '10/01/2020 15:50:00',
                     message: this.messageText,
                     status: 'sent'
-                }
-    
-                this.contacts[this.currentObjectIndex].messages.push(newSentMessage)
+                };
+                // inserimento del messaggio inviato nell'array messages
+                contacts[currentObjectIndex].messages.push(newSentMessage)
+
+
+                // pulizia della chat
                 this.messageText = ''
+
+                // funzion che incoda il codice da eseguire con un ritardo teorico di 1000 ms
+                setTimeout(function(){
+
+                    // creazione di un oggetto che corrisponde ad un messaggio ricevuto
+                    const newRecievedMessage = {
+                        date: '10/01/2020 15:50:00',
+                        message: 'Ok',
+                        status: 'recieved'
+                    };
+                    // inserimento del messaggio ricevuto nell'array messages
+                    contacts[currentObjectIndex].messages.push(newRecievedMessage);
+    
+                },1000)
+
             }
         },
     }
