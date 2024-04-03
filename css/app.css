@@ -589,6 +589,8 @@ body{
         flex-grow: 1;
         padding-top: 5px;
         font-size: 18px;
+        overflow: hidden;
+        white-space: nowrap;
     }
 
     .app__sidebar__contacts__card__name__nickname{

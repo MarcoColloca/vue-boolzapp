@@ -59,17 +59,19 @@
                 <!-- Sidebar Contacts -->
                 <div class="app__sidebar__contacts">
                     <!-- Sidebar Contacts Card 1-->
-                   <div class="app__sidebar__contacts__card">
-                        <img class="app__sidebar__contacts__card__img" src="./img/avatar_1.jpg" alt="">
+                    <div 
+                     class="app__sidebar__contacts__card"
+                     v-for="(contact,i) in contacts"
+                    >
+                        <img class="app__sidebar__contacts__card__img" :src="contact.avatar"  alt="">
                         <div class="app__sidebar__contacts__card__name">
-                            <p class="app__sidebar__contacts__card__name__nickname">Michele</p>
-                            <p class="app__sidebar__contacts__card__name__info">Lorem ipsum dolor sit amet</p>            
+                            <p class="app__sidebar__contacts__card__name__nickname">{{contact.name}}</p>
+                            <p class="app__sidebar__contacts__card__name__info">{{contact.messages[0].message}}</p>            
                         </div>
                         <p class="app__sidebar__contacts__card__time">16:20</p>
-                   </div> 
+                    </div> 
 
-                   <!-- Sidebar Contacts Card 2-->
-                   <div class="app__sidebar__contacts__card">
+                   <!-- <div class="app__sidebar__contacts__card">
                         <img class="app__sidebar__contacts__card__img" src="./img/avatar_2.jpg" alt="">
                         <div class="app__sidebar__contacts__card__name">
                             <p class="app__sidebar__contacts__card__name__nickname">Fabio</p>
@@ -78,7 +80,6 @@
                         <p class="app__sidebar__contacts__card__time">16:17</p>
                    </div>
 
-                   <!-- Sidebar Contacts Card 3-->
                    <div class="app__sidebar__contacts__card">
                         <img class="app__sidebar__contacts__card__img" src="./img/avatar_3.jpg" alt="">
                         <div class="app__sidebar__contacts__card__name">
@@ -88,7 +89,6 @@
                         <p class="app__sidebar__contacts__card__time">15:40</p>
                    </div>
 
-                   <!-- Sidebar Contacts Card 4-->
                    <div class="app__sidebar__contacts__card">
                         <img class="app__sidebar__contacts__card__img" src="./img/avatar_4.jpg" alt="">
                         <div class="app__sidebar__contacts__card__name">
@@ -98,7 +98,6 @@
                         <p class="app__sidebar__contacts__card__time">15:22</p>
                    </div>
 
-                   <!-- Sidebar Contacts Card 5-->
                    <div class="app__sidebar__contacts__card">
                         <img class="app__sidebar__contacts__card__img" src="./img/avatar_5.jpg" alt="">
                         <div class="app__sidebar__contacts__card__name">
@@ -108,7 +107,6 @@
                         <p class="app__sidebar__contacts__card__time">13:35</p>
                    </div>
 
-                   <!-- Sidebar Contacts Card 6-->
                    <div class="app__sidebar__contacts__card">
                         <img class="app__sidebar__contacts__card__img" src="./img/avatar_6.jpg" alt="">
                         <div class="app__sidebar__contacts__card__name">
@@ -118,7 +116,6 @@
                         <p class="app__sidebar__contacts__card__time">12:61</p>
                    </div>
 
-                   <!-- Sidebar Contacts Card 7-->
                    <div class="app__sidebar__contacts__card">
                         <img class="app__sidebar__contacts__card__img" src="./img/avatar_7.jpg" alt="">
                         <div class="app__sidebar__contacts__card__name">
@@ -128,7 +125,6 @@
                         <p class="app__sidebar__contacts__card__time">12:00</p>
                    </div>
                    
-                   <!-- Sidebar Contacts Card 8-->
                    <div class="app__sidebar__contacts__card">
                         <img class="app__sidebar__contacts__card__img" src="./img/avatar_8.jpg" alt="">
                         <div class="app__sidebar__contacts__card__name">
@@ -136,7 +132,7 @@
                             <p class="app__sidebar__contacts__card__name__info">Lorem ipsum dolor sit amet</p>            
                         </div>
                         <p class="app__sidebar__contacts__card__time">11:53</p>
-                   </div>
+                   </div> -->
                 </div>
             </header>
 
