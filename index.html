@@ -69,7 +69,7 @@
                             <p class="app__sidebar__contacts__card__name__nickname">{{contact.name}}</p>
                             <p class="app__sidebar__contacts__card__name__info">{{contact.messages[0].message}}</p>            
                         </div>
-                        <p class="app__sidebar__contacts__card__time">{{contact.messages[0].date.slice(11, 16)}} </p>
+                        <p class="app__sidebar__contacts__card__time">{{lastAccess.toFixed(2)}} </p>
                     </div> 
                 </div>
             </header>
@@ -88,8 +88,8 @@
                     >
 
                     <div class="app__chat__topbar--info">
-                        <p class="app__chat__topbar--info__name">Michele</p>
-                        <p class="app__chat__topbar--info__last-access">Ultimo accesso oggi alle 16:25</p>
+                        <p class="app__chat__topbar--info__name">{{ contact.name}}</p>
+                        <p class="app__chat__topbar--info__last-access">Ultimo accesso oggi alle {{lastAccess.toFixed(2)}}</p>
                     </div>
 
                     <ul class="app__chat__topbar--interaction">

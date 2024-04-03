@@ -188,6 +188,7 @@ createApp({
             ],
 
             currentObjectIndex: 0,
+            lastAccess: 12,
         }
     },
 
