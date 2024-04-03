@@ -62,6 +62,7 @@
                     <div 
                      class="app__sidebar__contacts__card"
                      v-for="(contact,i) in contacts"
+                     @click="currentObjectIndex = i"
                     >
                         <img class="app__sidebar__contacts__card__img" :src="contact.avatar"  alt="">
                         <div class="app__sidebar__contacts__card__name">
@@ -70,76 +71,21 @@
                         </div>
                         <p class="app__sidebar__contacts__card__time">{{contact.messages[0].date.slice(11, 16)}} </p>
                     </div> 
-                   <!-- <div class="app__sidebar__contacts__card">
-                        <img class="app__sidebar__contacts__card__img" src="./img/avatar_2.jpg" alt="">
-                        <div class="app__sidebar__contacts__card__name">
-                            <p class="app__sidebar__contacts__card__name__nickname">Fabio</p>
-                            <p class="app__sidebar__contacts__card__name__info">Lorem ipsum dolor sit amet</p>            
-                        </div>
-                        <p class="app__sidebar__contacts__card__time">16:17</p>
-                   </div>
-
-                   <div class="app__sidebar__contacts__card">
-                        <img class="app__sidebar__contacts__card__img" src="./img/avatar_3.jpg" alt="">
-                        <div class="app__sidebar__contacts__card__name">
-                            <p class="app__sidebar__contacts__card__name__nickname">Samuele</p>
-                            <p class="app__sidebar__contacts__card__name__info">Lorem ipsum dolor sit amet</p>            
-                        </div>
-                        <p class="app__sidebar__contacts__card__time">15:40</p>
-                   </div>
-
-                   <div class="app__sidebar__contacts__card">
-                        <img class="app__sidebar__contacts__card__img" src="./img/avatar_4.jpg" alt="">
-                        <div class="app__sidebar__contacts__card__name">
-                            <p class="app__sidebar__contacts__card__name__nickname">Alessabdri B.</p>
-                            <p class="app__sidebar__contacts__card__name__info">Lorem ipsum dolor sit amet</p>            
-                        </div>
-                        <p class="app__sidebar__contacts__card__time">15:22</p>
-                   </div>
-
-                   <div class="app__sidebar__contacts__card">
-                        <img class="app__sidebar__contacts__card__img" src="./img/avatar_5.jpg" alt="">
-                        <div class="app__sidebar__contacts__card__name">
-                            <p class="app__sidebar__contacts__card__name__nickname">Akessabdro L.</p>
-                            <p class="app__sidebar__contacts__card__name__info">Lorem ipsum dolor sit amet</p>            
-                        </div>
-                        <p class="app__sidebar__contacts__card__time">13:35</p>
-                   </div>
-
-                   <div class="app__sidebar__contacts__card">
-                        <img class="app__sidebar__contacts__card__img" src="./img/avatar_6.jpg" alt="">
-                        <div class="app__sidebar__contacts__card__name">
-                            <p class="app__sidebar__contacts__card__name__nickname">Claudia</p>
-                            <p class="app__sidebar__contacts__card__name__info">Lorem ipsum dolor sit amet</p>            
-                        </div>
-                        <p class="app__sidebar__contacts__card__time">12:61</p>
-                   </div>
-
-                   <div class="app__sidebar__contacts__card">
-                        <img class="app__sidebar__contacts__card__img" src="./img/avatar_7.jpg" alt="">
-                        <div class="app__sidebar__contacts__card__name">
-                            <p class="app__sidebar__contacts__card__name__nickname">Federico</p>
-                            <p class="app__sidebar__contacts__card__name__info">Lorem ipsum dolor sit amet</p>            
-                        </div>
-                        <p class="app__sidebar__contacts__card__time">12:00</p>
-                   </div>
-                   
-                   <div class="app__sidebar__contacts__card">
-                        <img class="app__sidebar__contacts__card__img" src="./img/avatar_8.jpg" alt="">
-                        <div class="app__sidebar__contacts__card__name">
-                            <p class="app__sidebar__contacts__card__name__nickname">Davide</p>
-                            <p class="app__sidebar__contacts__card__name__info">Lorem ipsum dolor sit amet</p>            
-                        </div>
-                        <p class="app__sidebar__contacts__card__time">11:53</p>
-                   </div> -->
                 </div>
             </header>
 
             <!-- App Chat Section -->
             <main class="app__chat">
                 <!-- App Chat Topbar -->
-                <div class="app__chat__topbar">
-                    <img class="app__chat__topbar--img" src="./img/avatar_1.jpg" alt="">
+                <div 
+                 class="app__chat__topbar"
+                 v-for="(contact,i) in contacts" 
+                 :class="i === currentObjectIndex ? 'active' : '' "
+                >
+                    <img 
+                     class="app__chat__topbar--img" 
+                     :src="contact.avatar" alt=""
+                    >
 
                     <div class="app__chat__topbar--info">
                         <p class="app__chat__topbar--info__name">Michele</p>
@@ -163,11 +109,17 @@
                 </div>
 
                 <!-- App Chat Message Box -->
-                <div class="app__chat__message--box">
+                <div 
+                 class="app__chat__message--box"
+                 v-for="(contact,i) in contacts"
+                 :class="i === currentObjectIndex ? 'active' : '' "
+                >
                     <!-- Right Textbox -->
-                    <div class="app__chat__message--box__text--right">
+                    <div class="app__chat__message--box__text--right"
+                                        
+                    >
                         <!-- message text -->
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos dolores architecto asperiores eum omnis saepe possimus suscipit corporis eligendi, officiis perspiciatis ullam doloribus neque voluptatem eaque?</p>
+                        <p>Hai portato a spasso il cane?</p>
                         
                         <!-- Message Time -->
                         <div class="app__chat__message--box__text__time">
@@ -201,7 +153,9 @@
                     </div>
 
                     <!-- Left Textbox -->
-                    <div class="app__chat__message--box__text--left">
+                    <div class="app__chat__message--box__text--left"
+                    
+                    >
                         <!-- message text -->
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos dolores architecto asperiores eum omnis saepe possimus suscipit corporis eligendi, officiis perspiciatis ullam doloribus neque voluptatem eaque?</p>
                         

@@ -185,7 +185,9 @@ createApp({
                         }
                     ],
                 }
-            ]
+            ],
+
+            currentObjectIndex: 0,
         }
     },
 
