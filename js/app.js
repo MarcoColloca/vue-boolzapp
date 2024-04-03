@@ -187,9 +187,11 @@ createApp({
                 }
             ],
 
-            currentObjectIndex: 0,
-            lastAccess: 12,
+            currentObjectIndex: 0,            
             currentMessageIndex: 0,
+            lastAccess: 12,
+
+            messageText: '',
         }
     },
 
@@ -203,6 +205,21 @@ createApp({
         },
 
 
+        addSentMessage(){
+
+
+            if(this.messageText !== ''){
+                
+                const newSentMessage = {
+                    date: '10/01/2020 15:50:00',
+                    message: this.messageText,
+                    status: 'sent'
+                }
+    
+                this.contacts[this.currentObjectIndex].messages.push(newSentMessage)
+                this.messageText = ''
+            }
+        },
     }
 
 }).mount('#app')

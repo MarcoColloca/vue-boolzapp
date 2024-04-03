@@ -117,7 +117,7 @@
                     <!-- Right Textbox -->
                     <div                      
                      v-for="(message, i) in contact.messages"
-                     :class="message.status === 'received' ? 'app__chat__message--box__text--right' : 'app__chat__message--box__text--left'"
+                     :class="message.status === 'sent' ? 'app__chat__message--box__text--right' : 'app__chat__message--box__text--left'"
                     >
                         <!-- message text -->
                         <p>{{ contact.messages[i].message }}</p>
@@ -184,7 +184,13 @@
                     </div>
 
                     <!-- Chat Box -->
-                    <input class="app__chat__message--input__text-box" type="text" placeholder="Scrivi un Messaggio ...">
+                    <input 
+                     class="app__chat__message--input__text-box" 
+                     type="text" 
+                     placeholder="Scrivi un Messaggio ..."
+                     v-model.trim="messageText"
+                     @keyup.enter="addSentMessage()"
+                    >
 
                     <!-- Pulsante Audio Chat -->
                     <a href="#" class="chat--microphone">
