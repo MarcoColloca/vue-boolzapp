@@ -1,0 +1,674 @@
+/* RESET RULES */
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+ul, ol, menu{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: currentColor;
+}
+
+img{
+    max-width: 100%;
+}
+
+
+/*\\ LAYOUT //*/
+
+#app{
+    height: 100vh;
+}
+
+.app-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+*:focus::placeholder{
+    color: transparent;
+}
+
+
+
+/*\\ STYLE //*/
+
+body{
+    font-family: "Lato", sans-serif;
+}
+
+
+
+
+/* UTILITY */
+
+.txt-bold{
+    font-weight: bold;
+}
+
+
+
+
+/*\\ HEADER //*/
+
+
+.app__sidebar{
+    display: none;
+}
+
+
+
+
+
+
+/*\\ MAIN //*/
+
+.app__chat{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #EAEAEA;
+}
+
+
+
+
+/* App Chat Topbar */
+
+.app__chat__topbar{
+    background-color: #EAEAEA;
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.app__chat__topbar--img{
+    width: 55px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    padding: 5px;
+    margin: 0 10px;
+}
+
+
+.app__chat__topbar--info{
+    flex-grow: 1;
+}
+
+.app__chat__topbar--info__name{
+    font-weight: bold;
+}
+
+.app__chat__topbar--info__last-access{
+    color: rgb(99, 99, 99);
+}
+
+
+.app__chat__topbar--interaction{
+    display: none;
+}
+
+
+
+/* App Chat Message Box */
+.app__chat__message--box{
+    flex-grow: 1;
+    background-image: url(../img/mine.jpg);
+    overflow-y: scroll;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.app__chat__message--box div:first-child{
+    margin-top: 40px;
+}
+
+.app__chat__message--box .app__chat__message--box__text--right,
+.app__chat__message--box .app__chat__message--box__text--left{
+    padding: 20px;
+    margin-bottom: 20px;
+    max-width: 347px;
+    border-radius: 18px;
+    display: flex;
+    font-size: 18px;
+}
+
+
+.app__chat__message--box__text--right{
+    align-self: flex-end;
+    background-color: #D5FABA;
+    margin-right: 30px;
+    margin-left: 5px;
+}
+
+.app__chat__message--box__text--left{
+    background-color: #FFFFFF;
+    margin-left: 30px;
+    margin-right: 5px;
+
+}
+
+.app__chat__message--box__text__time{
+    display: flex;
+    flex-direction: column;
+    color: rgb(167, 167, 167);
+}
+
+.app__chat__message--box__text__time > p{
+    margin-top: auto;
+}
+
+.chat-menu-content{
+    display: none;
+}
+
+
+
+.chat-menu:hover + .chat-menu-content{
+    display: block;
+    margin-top: 15px; 
+    position: absolute;
+    color: rgb(90, 90, 90);
+    padding: 0 3px;
+}
+
+.chat-menu-content:hover{
+    display: block;
+    position: absolute;
+    margin-top: 15px;
+    color: rgb(90, 90, 90);
+    padding: 0 3px;
+}
+
+.chat-menu-content a:hover{
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}
+
+.app__chat__message--box__text--left .chat-menu:hover + .chat-menu-content,
+.app__chat__message--box__text--left .chat-menu-content:hover{
+    background-color: #ffffff;
+    border-radius: 5px;
+}
+
+
+.app__chat__message--box__text--right .chat-menu:hover + .chat-menu-content,
+.app__chat__message--box__text--right .chat-menu-content:hover{
+    background-color: #D5FABA;
+    border-radius: 5px;
+}
+
+
+
+
+/* App Chat message input */
+
+.app__chat__message--input{
+    background-color: #EAEAEA;
+    display: flex;
+    align-items: center;
+}
+
+.app__chat__message--input__text-box{
+    flex-grow: 1;
+    margin: 10px 15px;
+    padding: 15px;
+    border: 1px solid rgba(0, 0, 0, 0);
+}
+
+.app__chat__message--input > a{
+    display: none;
+}
+
+.app__chat__message--input__text-box:hover{
+    border: 1px solid black;
+    border-radius: 3px;
+}
+
+.chat--emoticons__tab{
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+/* RESPONSIVE BREAKPOINTS */
+
+
+
+/*\ Tablet Responsive View (768px) /*/
+
+@media (min-width:768px){
+    
+    /*\ App Side bar */
+    .app__sidebar{
+        display: flex;
+        flex-direction: column;
+        width: 90px;
+        height: 100%;
+        flex-shrink: 0;
+        background-color: white;
+        align-items: flex-start;
+    }
+
+    .app__sidebar--img{
+        width: 55px;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        padding: 5px;
+        margin: 0 10px;
+    } 
+       
+    
+    
+    /* App Side bar Userbar */
+    .app__sidebar__userbar{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #EAEAEA;
+        padding: 15px 0;
+        width: 100%;
+    }
+    
+    
+    .app__sidebar__userbar--interaction{
+        display: none;
+    }
+
+
+    /* App Side bar Notifications */
+    .app__sidebar__notifications{
+        display: none;
+    }
+
+    /* App Side bar Searchbar */
+    .app__sidebar__searchbar{
+        display: none;
+    }
+
+
+    /* App Side bar Contacts */
+
+    .app__sidebar__contacts{
+        overflow-y: scroll;
+        flex-grow: 1;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+    .app__sidebar__contacts__card{
+        margin-top: 10px;
+        cursor: pointer;
+    }
+
+    .app__sidebar__contacts__card:hover{
+        background-color: #00000010;
+        color: rgb(255, 0, 0);
+    }
+
+    .app__sidebar__contacts__card:active{
+        background-color:#d5fabaa2;
+    }
+
+    .app__sidebar__contacts__card__img{
+        width: 55px;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        padding: 5px;
+    }
+
+    .app__sidebar__contacts__card__name{
+        display: none;
+    }
+
+    .app__sidebar__contacts__card__time{
+        display: none;
+    }
+
+    /* App Chat topbar */
+    .app__chat__topbar--interaction{
+        display: flex;
+        margin: 0 10px;
+    }
+
+    .app__chat__topbar--interaction li{
+        margin-left: 5px;        
+    }
+
+    .app__chat__topbar--interaction i{
+        font-size: 1.8rem;
+        color: rgb(163, 163, 163);
+        padding: 10px;
+    }
+
+    
+    /* App Chat Message Box */
+
+    .app__chat__message--box .app__chat__message--box__text--right,
+    .app__chat__message--box .app__chat__message--box__text--left{
+        max-width: 480px;
+        min-height: 130px;
+    }
+
+
+
+    /* App Chat message input */
+
+    .app__chat__message--input__text-box{
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .app__chat__message--input > a{
+        display: inline-block;
+        padding: 0 20px;
+        font-size: 1.8rem;
+        color: rgb(53, 53, 53);
+    }
+
+
+
+    .chat--microphone:focus{
+        color: rgb(255, 0, 0);
+    }
+    .chat--microphone:hover{
+        color: rgb(68, 0, 0);
+    }
+    .chat--microphone:active{
+        color: rgb(128, 0, 0);
+    }
+
+
+    .chat--emoticons__tab{
+        position: absolute;
+        background-color: #EAEAEA;
+        transform: translateY(-81px);
+        display: none;
+    }
+
+
+    .chat--emoticons__tab i{
+        font-size: 32px;
+        aspect-ratio: 1/1;
+        color: rgb(53, 53, 53);
+    }
+
+
+    .chat--emoticons:visited + .chat--emoticons__tab{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+
+    .chat--emoticons:focus + .chat--emoticons__tab{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+
+    .chat--emoticons:hover{
+        color: rgb(0, 0, 0);
+        text-shadow: 1px 1px;
+        cursor: pointer;
+    }
+
+    .chat--emoticons:focus{
+        color: rgb(255, 196, 0);
+    }
+
+    .chat--emoticons:active{
+        color: rgb(255, 196, 0);
+    }
+
+    .chat--emoticons:active + .chat--emoticons__tab{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+
+
+    .chat--emoticons__tab:hover{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+
+}
+
+
+
+
+
+
+
+/*\ Desktop Responsive View (992px) /*/
+
+@media (min-width:992px){
+
+    /*\ App */
+    #app{
+        padding: 36px 0;
+        background: linear-gradient(to bottom, #4d9288 15%, #dcdcd4 10%);
+    }
+
+
+    .app-container{
+       width: 80%;
+       margin: 0 auto;
+    } 
+
+
+    /*\ App Side bar */
+    .app__sidebar{
+
+        width: 380px;
+        background-color: #EAEAEA;
+    }
+
+
+    /* App Side bar Userbar */
+    .app__sidebar__userbar{
+        justify-content: space-between;
+    }
+
+    .app__sidebar__userbar--interaction{
+        display: flex;
+        margin: 0 10px;
+    }
+
+    .app__sidebar__userbar--interaction li{
+        margin-left: 5px;        
+    }
+
+    .app__sidebar__userbar--interaction i{
+        font-size: 1.8rem;
+        color: rgb(163, 163, 163);
+        padding: 10px;
+    }
+
+
+    /* App Side bar Notifications */
+    .app__sidebar__notifications{
+        display: flex;
+        padding: 20px 10px;
+        background-color: #8EDAFC;
+        width: 100%;
+    }
+
+    .app__sidebar__notifications__icon{
+        font-size: 20px;
+        background-color: white;
+        color: #8EDAFC;
+        border-radius: 50%;
+        margin-right: 15px;
+        width: 50px;
+        aspect-ratio: 1/1;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .app__sidebar__notifications__text{
+        flex-grow: 1;
+    }
+
+    .app__sidebar__notifications__text--intro{
+        font-weight: bold;
+        font-size: 19px;
+    }
+
+    .app__sidebar__notifications__text--link{
+        color: rgb(94, 94, 94);
+        text-decoration: underline;
+    }
+
+
+    /* App Sidebar Searchbar */
+    .app__sidebar__searchbar{
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: space-evenly;
+        padding: 10px;
+    }
+
+    .app__sidebar__searchbar__text-box{
+        flex-grow: 1;
+        padding: 15px 5px;
+        padding-left: 30px;
+        color: rgb(53, 53, 53);
+        border: none;
+        margin-left: -25px;    
+    }
+
+    .app__sidebar__searchbar__icon{
+        z-index: 99;
+        color: rgb(163, 163, 163);
+        pointer-events: none;
+    }
+    
+        /* App Sidebar Contacts */
+
+    .app__sidebar__contacts{
+        width: 100%;
+        align-items: stretch;
+    }
+
+    .app__sidebar__contacts__card{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 10px;
+        margin: 1px 10px 1px 0;
+        background-color: white;
+    }
+
+    .app__sidebar__contacts__card__img{
+        margin-left: 0;
+    }
+
+    .app__sidebar__contacts__card__name{
+        display: inline-block;
+        flex-grow: 1;
+        padding-top: 5px;
+        font-size: 18px;
+    }
+
+    .app__sidebar__contacts__card__name__nickname{
+        font-weight: bold;
+    }
+    
+    .app__sidebar__contacts__card__name__info{
+        color: rgb(185, 185, 185);
+    }
+
+    .app__sidebar__contacts__card__time{
+        display: inline-block;
+        padding-top: 5px;
+        color: rgb(185, 185, 185);
+    }
+
+
+    /* App Chat Message Box */
+
+    .app__chat__message--box .app__chat__message--box__text--right,
+    .app__chat__message--box .app__chat__message--box__text--left{
+        max-width: 620px;
+    }
+
+    .app__chat__message--box .app__chat__message--box__text--right{
+        margin-right: 130px;
+    }
+
+    .app__chat__message--box .app__chat__message--box__text--left{
+        margin-left: 130px;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+/* --------> DEBUG <-------- */
+
+.debug .app-container{
+    border: 1px solid red;
+    /* background-color: rgb(204, 192, 192); */
+}
+
+
+
+.debug .app__sidebar{
+
+    border: 2px dashed rgb(0, 4, 255);
+    /* background-color: violet; */
+}
+
+
+.debug .app__chat{
+    border: 2px dashed rgb(0, 255, 42);
+    /* background-color: pink; */
+}
+
+
+
+/* .debug #app{
+    background-color: rgb(58, 85, 58);
+} */
+
+
+/* .app__chat__message--box{
+    border: 1px white solid;
+} */
+
+
+/* .debug [class*=app__chat__message--box__text]{
+    max-width: 300px;
+    min-height: 100px;
+    background-color: salmon;
+    margin-top: 30px;
+    padding: 10px;
+} */

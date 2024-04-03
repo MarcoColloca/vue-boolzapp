@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boolzap</title>
+    <script src="https://kit.fontawesome.com/19fd1971ea.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/app.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+
+
+<body class="debu">
+    <!-- Whatsapp App -->
+    <div id="app">
+        <!-- App Container -->
+        <div class="app-container">
+            <!-- App Sidebar Section (-Hidden in Mobile View)-->
+            <header class="app__sidebar">
+                <!-- Sidebar Userbar -->
+                <div class="app__sidebar__userbar">
+                   <img class="app__sidebar--img" src="./img/avatar_io.jpg" alt="">
+                   <ul class="app__sidebar__userbar--interaction">
+                    <li>
+                        <a href="#"><i class="fa-solid fa-circle-notch"></i></a>
+                    </li>
+
+                    <li>
+                        <a href="#"><i class="fa-solid fa-message"></i></a>
+                    </li>
+
+                    <li>
+                        <a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a>
+                    </li>
+                   </ul>
+                </div>
+
+                <!-- Sidebar Notifications (-Hidden in Tablet View) -->
+                <div class="app__sidebar__notifications">
+                    <div class="app__sidebar__notifications__icon">
+                        <i class="fa-solid fa-bell-slash"></i>
+                    </div>
+                    <div class="app__sidebar__notifications__text">
+                        <p class="app__sidebar__notifications__text--intro">Ricevi notifiche di nuovi messaggi</p>
+                        <a class="app__sidebar__notifications__text--link" href="#">Attiva notifiche desktop</a>
+                    </div>
+                </div>
+
+                <!-- Sidebar Searchbar (-Hidden in Tablet View) -->
+                <div class="app__sidebar__searchbar">
+                    <i class="fa-solid fa-magnifying-glass app__sidebar__searchbar__icon"></i>
+                    <input class="app__sidebar__searchbar__text-box" type="search" placeholder=" Cerca o inizia una nuova chat">
+                </div>
+
+                <!-- Sidebar Contacts -->
+                <div class="app__sidebar__contacts">
+                    <!-- Sidebar Contacts Card 1-->
+                   <div class="app__sidebar__contacts__card">
+                        <img class="app__sidebar__contacts__card__img" src="./img/avatar_1.jpg" alt="">
+                        <div class="app__sidebar__contacts__card__name">
+                            <p class="app__sidebar__contacts__card__name__nickname">Michele</p>
+                            <p class="app__sidebar__contacts__card__name__info">Lorem ipsum dolor sit amet</p>            
+                        </div>
+                        <p class="app__sidebar__contacts__card__time">16:20</p>
+                   </div> 
+
+                   <!-- Sidebar Contacts Card 2-->
+                   <div class="app__sidebar__contacts__card">
+                        <img class="app__sidebar__contacts__card__img" src="./img/avatar_2.jpg" alt="">
+                        <div class="app__sidebar__contacts__card__name">
+                            <p class="app__sidebar__contacts__card__name__nickname">Fabio</p>
+                            <p class="app__sidebar__contacts__card__name__info">Lorem ipsum dolor sit amet</p>            
+                        </div>
+                        <p class="app__sidebar__contacts__card__time">16:17</p>
+                   </div>
+
+                   <!-- Sidebar Contacts Card 3-->
+                   <div class="app__sidebar__contacts__card">
+                        <img class="app__sidebar__contacts__card__img" src="./img/avatar_3.jpg" alt="">
+                        <div class="app__sidebar__contacts__card__name">
+                            <p class="app__sidebar__contacts__card__name__nickname">Samuele</p>
+                            <p class="app__sidebar__contacts__card__name__info">Lorem ipsum dolor sit amet</p>            
+                        </div>
+                        <p class="app__sidebar__contacts__card__time">15:40</p>
+                   </div>
+
+                   <!-- Sidebar Contacts Card 4-->
+                   <div class="app__sidebar__contacts__card">
+                        <img class="app__sidebar__contacts__card__img" src="./img/avatar_4.jpg" alt="">
+                        <div class="app__sidebar__contacts__card__name">
+                            <p class="app__sidebar__contacts__card__name__nickname">Alessabdri B.</p>
+                            <p class="app__sidebar__contacts__card__name__info">Lorem ipsum dolor sit amet</p>            
+                        </div>
+                        <p class="app__sidebar__contacts__card__time">15:22</p>
+                   </div>
+
+                   <!-- Sidebar Contacts Card 5-->
+                   <div class="app__sidebar__contacts__card">
+                        <img class="app__sidebar__contacts__card__img" src="./img/avatar_5.jpg" alt="">
+                        <div class="app__sidebar__contacts__card__name">
+                            <p class="app__sidebar__contacts__card__name__nickname">Akessabdro L.</p>
+                            <p class="app__sidebar__contacts__card__name__info">Lorem ipsum dolor sit amet</p>            
+                        </div>
+                        <p class="app__sidebar__contacts__card__time">13:35</p>
+                   </div>
+
+                   <!-- Sidebar Contacts Card 6-->
+                   <div class="app__sidebar__contacts__card">
+                        <img class="app__sidebar__contacts__card__img" src="./img/avatar_6.jpg" alt="">
+                        <div class="app__sidebar__contacts__card__name">
+                            <p class="app__sidebar__contacts__card__name__nickname">Claudia</p>
+                            <p class="app__sidebar__contacts__card__name__info">Lorem ipsum dolor sit amet</p>            
+                        </div>
+                        <p class="app__sidebar__contacts__card__time">12:61</p>
+                   </div>
+
+                   <!-- Sidebar Contacts Card 7-->
+                   <div class="app__sidebar__contacts__card">
+                        <img class="app__sidebar__contacts__card__img" src="./img/avatar_7.jpg" alt="">
+                        <div class="app__sidebar__contacts__card__name">
+                            <p class="app__sidebar__contacts__card__name__nickname">Federico</p>
+                            <p class="app__sidebar__contacts__card__name__info">Lorem ipsum dolor sit amet</p>            
+                        </div>
+                        <p class="app__sidebar__contacts__card__time">12:00</p>
+                   </div>
+                   
+                   <!-- Sidebar Contacts Card 8-->
+                   <div class="app__sidebar__contacts__card">
+                        <img class="app__sidebar__contacts__card__img" src="./img/avatar_8.jpg" alt="">
+                        <div class="app__sidebar__contacts__card__name">
+                            <p class="app__sidebar__contacts__card__name__nickname">Davide</p>
+                            <p class="app__sidebar__contacts__card__name__info">Lorem ipsum dolor sit amet</p>            
+                        </div>
+                        <p class="app__sidebar__contacts__card__time">11:53</p>
+                   </div>
+                </div>
+            </header>
+
+            <!-- App Chat Section -->
+            <main class="app__chat">
+                <!-- App Chat Topbar -->
+                <div class="app__chat__topbar">
+                    <img class="app__chat__topbar--img" src="./img/avatar_1.jpg" alt="">
+
+                    <div class="app__chat__topbar--info">
+                        <p class="app__chat__topbar--info__name">Michele</p>
+                        <p class="app__chat__topbar--info__last-access">Ultimo accesso oggi alle 16:25</p>
+                    </div>
+
+                    <ul class="app__chat__topbar--interaction">
+                        <li>
+                            <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+                        </li>
+
+                        <li>
+                            <a href="#"><i class="fa-solid fa-paperclip"></i></a>
+                        </li>
+
+                        <li>
+                            <a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a>
+                        </li>
+                    </ul>
+
+                </div>
+
+                <!-- App Chat Message Box -->
+                <div class="app__chat__message--box">
+                    <!-- Right Textbox -->
+                    <div class="app__chat__message--box__text--right">
+                        <!-- message text -->
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos dolores architecto asperiores eum omnis saepe possimus suscipit corporis eligendi, officiis perspiciatis ullam doloribus neque voluptatem eaque?</p>
+                        
+                        <!-- Message Time -->
+                        <div class="app__chat__message--box__text__time">
+                            
+                            <i class="fa-solid fa-chevron-down chat-menu"></i>
+                            
+                            <ul class="chat-menu-content">
+                                <li>
+                                    <a href="#">Copia</a>
+                                </li>
+
+                                <li>
+                                    <a href="#">Elimina</a>
+                                </li>
+
+                                <li>
+                                    <a href="#">Fissa</a>
+                                </li>
+
+                                <li>
+                                    <a href="#">Inoltra</a>
+                                </li>
+                                
+                                <li>
+                                    <a href="#">Info</a>
+                                </li>
+                            </ul>
+                            
+                            <p>16:10</p>
+                        </div>
+                    </div>
+
+                    <!-- Left Textbox -->
+                    <div class="app__chat__message--box__text--left">
+                        <!-- message text -->
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos dolores architecto asperiores eum omnis saepe possimus suscipit corporis eligendi, officiis perspiciatis ullam doloribus neque voluptatem eaque?</p>
+                        
+                        <!-- Message Time -->
+                        <div class="app__chat__message--box__text__time">
+                            <i class="fa-solid fa-chevron-down chat-menu"></i>
+
+                            <ul class="chat-menu-content">
+                                <li>
+                                    <a href="#">Copia</a>
+                                </li>
+                                <li>
+                                    <a href="#">Elimina</a>
+                                </li>
+
+                                <li>
+                                    <a href="#">Fissa</a>
+                                </li>
+
+                                <li>
+                                    <a href="#">Inoltra</a>
+                                </li>
+
+                                <li>
+                                    <a href="#">Info</a>
+                                </li>
+                            </ul>
+
+                            <p>16:12</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- App Chat Message Input -->
+                <div class="app__chat__message--input">
+                    <!-- Pulsante per Emoticons -->
+                    <a href="#" class="chat--emoticons">
+                        <i class="fa-regular fa-face-smile"></i>
+                    </a>
+
+                    <!-- Emoticons Tab -->
+                    <div class="chat--emoticons__tab">
+                        <div class="emoticons__col">
+                            <i class="fa-regular fa-face-tired chat--emoticons"></i>
+                            <i class="fa-regular fa-face-meh-blank chat--emoticons"></i>
+                            <i class="fa-regular fa-face-smile-beam chat--emoticons"></i>
+                        </div>
+
+                        <div class="emoticons_col">
+                            <i class="fa-regular fa-face-sad-cry chat--emoticons"></i>
+                            <i class="fa-regular fa-face-smile chat--emoticons"></i>
+                            <i class="fa-regular fa-face-frown chat--emoticons"></i>
+                        </div>
+
+                        <div class="emoticons_col">
+                            <i class="fa-regular fa-face-angry chat--emoticons"></i>
+                            <i class="fa-regular fa-face-flushed chat--emoticons"></i>
+                            <i class="fa-regular fa-face-flushed chat--emoticons"></i>
+                        </div>
+                    </div>
+
+                    <!-- Chat Box -->
+                    <input class="app__chat__message--input__text-box" type="text" placeholder="Scrivi un Messaggio ...">
+
+                    <!-- Pulsante Audio Chat -->
+                    <a href="#" class="chat--microphone">
+                        <i class="fa-solid fa-microphone"></i>
+                    </a>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="./js/app.js"></script>
+</body>
+</html>
