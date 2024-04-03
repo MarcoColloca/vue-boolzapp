@@ -194,7 +194,11 @@ createApp({
 
     methods:{
 
+        activeElement(index){
 
+            this.currentObjectIndex = index;
+
+        }
 
     }
 

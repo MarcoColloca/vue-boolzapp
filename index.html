@@ -62,7 +62,7 @@
                     <div 
                      class="app__sidebar__contacts__card"
                      v-for="(contact,i) in contacts"
-                     @click="currentObjectIndex = i"
+                     @click="activeElement(i)"
                     >
                         <img class="app__sidebar__contacts__card__img" :src="contact.avatar"  alt="">
                         <div class="app__sidebar__contacts__card__name">
