@@ -164,12 +164,17 @@ body{
 
 .app__chat__message--box__text__time{
     display: flex;
+    position: relative;
     flex-direction: column;
     color: rgb(167, 167, 167);
 }
 
 .app__chat__message--box__text__time > p{
     margin-top: auto;
+}
+
+.chat-menu{
+    cursor: pointer;
 }
 
 .chat-menu-content{

@@ -278,13 +278,11 @@ createApp({
         },
 
 
-        typeOfMessage(){
-            for(i = 0; i < this.contacts.length; i++){
+        deleteMessage(array, index, elementsRemoved){
 
-                this.this.contacts[i].messages
+            array.splice(index, elementsRemoved)
 
-            }
-        }
+        },
     }
 
 }).mount('#app')
