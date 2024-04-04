@@ -201,14 +201,20 @@ createApp({
 
 
     computed:{
-        // funzione che rappresenta il contatto all'indice corrente
+        // computed che rappresenta il contatto all'indice corrente
         currentContact(){
             return this.contacts[this.currentObjectIndex]
         },
 
-        // funzione che rappresenta l'array messages del contatto all'indice corrente
+        // computed che rappresenta l'array messages del contatto all'indice corrente
         currentChat(){
             return this.currentContact.messages
+        },
+
+        // computed che tenendo in considerazione le variabili this.contacts e this.searchBarText, 
+        // ritorna un array secondario con all'interno solo oggetti che abbiano la loro proprietà nome che contenga le lettere inserite all'interno della serachBar.
+        contactsFilter() {
+            return this.contacts.filter(contact => contact.name.toLowerCase().includes(this.searchBarText.toLowerCase()));
         },
     },
 
@@ -249,7 +255,7 @@ createApp({
                 // creazione di un oggetto che corrisponde ad un messaggio ricevuto
                 const newRecievedMessage = {
                     date: this.myDate(),
-                    message: 'Ok',
+                    message: '(ง•̀_•́)ง',
                     status: 'received'
                 };
 
@@ -264,6 +270,7 @@ createApp({
         },
 
         // funzione che va a modifiare il parametro visible all'interno di contacts quando ciò che viene scritto nella searchBar della sideBar non è presente al'interno del parametro "name" negli oggetti dell'array contacts
+        // rimossa in favore di una computed.
         searchContact(){
 
             for(i = 0; i < this.contacts.length; i++){

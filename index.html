@@ -58,7 +58,6 @@
                      type="search" 
                      placeholder=" Cerca o inizia una nuova chat"
                      v-model="searchBarText"
-                     @keyup="searchContact()"
                     >
                 </div>
 
@@ -67,9 +66,8 @@
                     <!-- Sidebar Contacts Card 1-->
                     <div 
                      class="app__sidebar__contacts__card"
-                     v-for="(contact,i) in contacts"
+                     v-for="(contact,i) in contactsFilter"
                      @click="activeElement(i)"
-                     :class="contact.visible === false ? 'hide' : ''"
                     >
                         <img class="app__sidebar__contacts__card__img" :src="contact.avatar"  alt="">
                         <div class="app__sidebar__contacts__card__name">
@@ -78,7 +76,7 @@
                         </div>
                         <p class="app__sidebar__contacts__card__time">{{ lastDate(contact.messages).slice(11, 16)}}</p>
                     </div> 
-                </div>
+                </div>                
             </header>
 
             <!-- App Chat Section -->
