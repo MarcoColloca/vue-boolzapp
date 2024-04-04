@@ -203,12 +203,12 @@ createApp({
     computed:{
         // computed che rappresenta il contatto all'indice corrente
         currentContact(){
-            return this.contacts[this.currentObjectIndex]
+            return this.contacts[this.currentObjectIndex];
         },
 
         // computed che rappresenta l'array messages del contatto all'indice corrente
         currentChat(){
-            return this.currentContact.messages
+            return this.currentContact.messages;
         },
 
         // computed che tenendo in considerazione le variabili this.contacts e this.searchBarText, 
@@ -250,7 +250,7 @@ createApp({
 
 
                 // pulizia della chat
-                this.messageText = ''
+                this.messageText = '';
 
                 // creazione di un oggetto che corrisponde ad un messaggio ricevuto
                 const newRecievedMessage = {
@@ -265,7 +265,7 @@ createApp({
                     // inserimento del messaggio ricevuto nell'array messages
                     contacts[currentObjectIndex].messages.push(newRecievedMessage);
     
-                },1000)
+                },1000);
             };
         },
 
@@ -277,14 +277,14 @@ createApp({
 
                 if(this.contacts[i].name.toLowerCase().includes(this.searchBarText.toLowerCase()) === false){
 
-                    this.contacts[i].visible = false
+                    this.contacts[i].visible = false;
 
                 }else{
 
-                    this.contacts[i].visible = true
+                    this.contacts[i].visible = true;
 
-                }
-            }
+                };
+            };
            
         },
 
@@ -302,31 +302,31 @@ createApp({
             
             let day = currentDate.getDay();
             let month = currentDate.getMonth();
-            const year = currentDate.getFullYear()
-            let hours = currentDate.getHours()
-            let minutes = currentDate.getMinutes()
-            let seconds = currentDate.getSeconds()
+            const year = currentDate.getFullYear();
+            let hours = currentDate.getHours();
+            let minutes = currentDate.getMinutes();
+            let seconds = currentDate.getSeconds();
     
     
             if(day < 10){
                 day = '0' + day;
-            }
+            };
     
             if( month < 10){
                 month = '0' + month;
-            }
+            };
     
             if(hours < 10){
                 hours = '0' + hours;
-            }
+            };
     
             if(minutes < 10){
                 minutes = '0' + minutes;
-            }
+            };
     
             if(seconds < 10){
                 seconds = '0' + seconds;
-            }
+            };
     
     
     
@@ -334,21 +334,21 @@ createApp({
             const date = day + '/' + month + '/' + year;
             const time = hours + ":" + minutes + ":" + seconds;
     
-            const dateTime = date + ' ' + time
+            const dateTime = date + ' ' + time;
             
-            return dateTime
+            return dateTime;
         }, 
         
         // funzione che dato un array, permette di recuperare un elemento specifico posto alla fine di quell'array, in questo caso l'ultimo messaggio
         lastMessage(array){
 
-            let message = ''
+            let message = '';
 
             for(i = 0; i < array.length; i++){
                 message = array[array.length-1].message
-            }
+            };
 
-            return message
+            return message;
         },
 
         // funzione che dato un array, permette di recuperare un elemento specifico posto alla fine di quell'array, in questo caso l'ultima data
@@ -359,7 +359,7 @@ createApp({
                 date = array[array.length-1].date
             }
 
-            return date
+            return date;
         },
     }
 }).mount('#app')
