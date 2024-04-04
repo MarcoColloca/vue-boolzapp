@@ -258,6 +258,49 @@ createApp({
 
             };
         },
+
+
+        searchContact(){
+
+            for(i = 0; i < this.contacts.length; i++){
+
+                if(this.contacts[i].name.toLowerCase().includes(this.searchBarText.toLowerCase()) === false){
+
+                    this.contacts[i].visible = false
+
+                }else{
+
+                    this.contacts[i].visible = true
+
+                }
+            }
+           
+        },
     }
 
 }).mount('#app')
+
+Vue.config.devtools = true
+
+
+
+
+
+
+
+
+
+// Pseudo Codice Milestone 4
+/*
+
+    1°  quando scrivo deve accadere qualcosa. → richiamo funzione?
+        • @keydown="" ??
+
+    2°  verificare se quello che ho scritto è contenuto all'interno della proprietà nome di contacts
+
+    3°  Se è presente non faccio nulla,
+
+    4°  Se manca cambio la proprietà visible nel suo opposto.
+
+    5°  Utilizzo il metodo con il display:none/active per mostrare le chat che hanno il valore visible true.
+*/

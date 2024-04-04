@@ -665,7 +665,9 @@ body{
 } */
 
 
-
+.hide{
+    display: none;
+}
 
 
 
