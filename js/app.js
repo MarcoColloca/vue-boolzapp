@@ -225,13 +225,13 @@ createApp({
             const currentObjectIndex = this.currentObjectIndex;
             const messageText = this.messageText;
 
-
+            // condizione per l'invio del messaggio
             if(messageText !== ''){
 
 
                 // creazione di un oggetto che corrisponde ad un messaggio inviato
                 const newSentMessage = {
-                    date: '10/01/2020 15:50:00',
+                    date: this.myDate(),
                     message: this.messageText,
                     status: 'sent'
                 };
@@ -242,20 +242,20 @@ createApp({
                 // pulizia della chat
                 this.messageText = ''
 
-                // funzion che incoda il codice da eseguire con un ritardo teorico di 1000 ms
+                // creazione di un oggetto che corrisponde ad un messaggio ricevuto
+                const newRecievedMessage = {
+                    date: this.myDate(),
+                    message: 'Ok',
+                    status: 'received'
+                };
+
+                // funzione che incoda il codice da eseguire con un ritardo teorico di 1000 ms
                 setTimeout(function(){
 
-                    // creazione di un oggetto che corrisponde ad un messaggio ricevuto
-                    const newRecievedMessage = {
-                        date: '10/01/2020 15:50:00',
-                        message: 'Ok',
-                        status: 'received'
-                    };
                     // inserimento del messaggio ricevuto nell'array messages
                     contacts[currentObjectIndex].messages.push(newRecievedMessage);
     
                 },1000)
-
             };
         },
 
@@ -283,15 +283,99 @@ createApp({
             array.splice(index, elementsRemoved)
 
         },
-    }
 
+        myDate(){
+
+            const currentDate = new Date();
+            
+            let day = currentDate.getDay();
+            let month = currentDate.getMonth();
+            const year = currentDate.getFullYear()
+            let hours = currentDate.getHours()
+            let minutes = currentDate.getMinutes()
+            let seconds = currentDate.getSeconds()
+    
+    
+            if(day < 10){
+                day = '0' + day;
+            }
+    
+            if( month < 10){
+                month = '0' + month;
+            }
+    
+            if(hours < 10){
+                hours = '0' + hours;
+            }
+    
+            if(minutes < 10){
+                minutes = '0' + minutes;
+            }
+    
+            if(seconds < 10){
+                seconds = '0' + seconds;
+            }
+    
+    
+    
+            
+            const date = day + '/' + month + '/' + year;
+            const time = hours + ":" + minutes + ":" + seconds;
+    
+            const dateTime = date + ' ' + time
+            
+            return dateTime
+        },        
+    }
 }).mount('#app')
 
-Vue.config.devtools = true
 
 
 
 
+/*
+    myDate(){
+
+        const currentDate = new Date();
+        
+        let day = currentDate.getDay();
+        let month = currentDate.getMonth();
+        const year = currentDate.getFullYear()
+        let hours = currentDate.getHours()
+        let minutes = currentDate.getMinutes()
+        let seconds = currentDate.getSeconds()
+
+
+        if(day < 10){
+            day = '0' + day;
+        }
+
+        if( month < 10){
+            month = '0' + month;
+        }
+
+        if(hours < 10){
+            hours = '0' + hours;
+        }
+
+        if(minutes < 10){
+            minutes = '0' + minutes;
+        }
+
+        if(seconds < 10){
+            seconds = '0' + seconds;
+        }
+
+
+
+        
+        const date = day + '/' + month + '/' + year;
+        const time = hours + ":" + minutes + ":" + seconds;
+
+        this.dateTime = date + ' ' + time
+    
+    }, 
+*/
 
 
 
