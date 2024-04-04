@@ -84,16 +84,15 @@
                 <!-- App Chat Topbar -->
                 <div 
                  class="app__chat__topbar"
-                 v-for="(contact,i) in contacts" 
-                 :class="i === currentObjectIndex ? 'active' : '' "
+
                 >
                     <img 
                      class="app__chat__topbar--img" 
-                     :src="contact.avatar" alt=""
+                     :src="currentContact.avatar" alt=""
                     >
 
                     <div class="app__chat__topbar--info">
-                        <p class="app__chat__topbar--info__name">{{ contact.name }}</p>
+                        <p class="app__chat__topbar--info__name">{{ currentContact.name }}</p>
                         <p class="app__chat__topbar--info__last-access">Ultimo accesso oggi alle {{ lastAccess.toFixed(2) }}</p>
                     </div>
 
@@ -116,16 +115,14 @@
                 <!-- App Chat Message Box -->
                 <div 
                  class="app__chat__message--box"
-                 v-for="(contact,i) in contacts"
-                 :class="i === currentObjectIndex ? 'active' : '' "
                 >
                     <!-- Right Textbox -->
                     <div                      
-                     v-for="(message, i) in contact.messages"
+                     v-for="(message, i) in currentChat"
                      :class="message.status === 'sent' ? 'app__chat__message--box__text--right' : 'app__chat__message--box__text--left'"
                     >
                         <!-- message text -->
-                        <p>{{ contact.messages[i].message }}</p>
+                        <p>{{ currentChat[i].message }}</p>
                         
                         <!-- Message Time -->
                         <div class="app__chat__message--box__text__time">
@@ -154,7 +151,7 @@
                                 </li>
                             </ul>
                             
-                            <p>16:10</p>
+                            <p>{{currentChat[i].date.slice(11, 16)}}</p>
                         </div>
                     </div>
 

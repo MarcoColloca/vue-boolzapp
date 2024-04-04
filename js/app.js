@@ -199,6 +199,17 @@ createApp({
     },
 
 
+    computed:{
+        currentContact(){
+            return this.contacts[this.currentObjectIndex]
+        },
+
+        currentChat(){
+            return this.currentContact.messages
+        },
+    },
+
+
     methods:{
 
         activeElement(index){
@@ -245,7 +256,7 @@ createApp({
     
                 },1000)
 
-            }
+            };
         },
     }
 
