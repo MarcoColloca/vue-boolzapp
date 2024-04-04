@@ -131,8 +131,8 @@ body{
     margin-top: 40px;
 }
 
-.app__chat__message--box .app__chat__message--box__text--right,
-.app__chat__message--box .app__chat__message--box__text--left{
+.app__chat__message--box .sent,
+.app__chat__message--box .received{
     padding: 20px;
     margin-bottom: 20px;
     max-width: 347px;
@@ -143,19 +143,19 @@ body{
 }
 
 
-.app__chat__message--box__text--right{
+.sent{
     align-self: flex-end;
     background-color: #D5FABA;
     margin-right: 30px;
     margin-left: 5px;
 }
 
-.app__chat__message--box__text--right > p {
+.sent > p {
     margin-right: 30px;
 }
 
 
-.app__chat__message--box__text--left{
+.received{
     background-color: #FFFFFF;
     margin-left: 30px;
     margin-right: 5px;
@@ -199,15 +199,15 @@ body{
     font-weight: bold;
 }
 
-.app__chat__message--box__text--left .chat-menu:hover + .chat-menu-content,
-.app__chat__message--box__text--left .chat-menu-content:hover{
+.received .chat-menu:hover + .chat-menu-content,
+.received .chat-menu-content:hover{
     background-color: #ffffff;
     border-radius: 5px;
 }
 
 
-.app__chat__message--box__text--right .chat-menu:hover + .chat-menu-content,
-.app__chat__message--box__text--right .chat-menu-content:hover{
+.sent .chat-menu:hover + .chat-menu-content,
+.sent .chat-menu-content:hover{
     background-color: #D5FABA;
     border-radius: 5px;
 }
@@ -367,8 +367,8 @@ body{
     
     /* App Chat Message Box */
 
-    .app__chat__message--box .app__chat__message--box__text--right,
-    .app__chat__message--box .app__chat__message--box__text--left{
+    .app__chat__message--box .sent,
+    .app__chat__message--box .received{
         max-width: 480px;
         min-height: 130px;
     }
@@ -616,16 +616,16 @@ body{
 
     /* App Chat Message Box */
 
-    .app__chat__message--box .app__chat__message--box__text--right,
-    .app__chat__message--box .app__chat__message--box__text--left{
+    .app__chat__message--box .sent,
+    .app__chat__message--box .received{
         max-width: 420px;
     }
 
-    .app__chat__message--box .app__chat__message--box__text--right{
+    .app__chat__message--box .sent{
         margin-right: 80px;
     }
 
-    .app__chat__message--box .app__chat__message--box__text--left{
+    .app__chat__message--box .received{
         margin-left: 80px;
     }
 
@@ -652,8 +652,8 @@ body{
 
 /* Vue Classes*/
 
-/* .app__chat__message--box .app__chat__message--box__text--right.active,
-.app__chat__message--box .app__chat__message--box__text--left.active{
+/* .app__chat__message--box .sent.active,
+.app__chat__message--box .received.active{
     display: flex;
 } */
 

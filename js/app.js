@@ -249,7 +249,7 @@ createApp({
                     const newRecievedMessage = {
                         date: '10/01/2020 15:50:00',
                         message: 'Ok',
-                        status: 'recieved'
+                        status: 'received'
                     };
                     // inserimento del messaggio ricevuto nell'array messages
                     contacts[currentObjectIndex].messages.push(newRecievedMessage);
@@ -276,6 +276,15 @@ createApp({
             }
            
         },
+
+
+        typeOfMessage(){
+            for(i = 0; i < this.contacts.length; i++){
+
+                this.this.contacts[i].messages
+
+            }
+        }
     }
 
 }).mount('#app')

@@ -121,7 +121,7 @@
                     <!-- Right Textbox -->
                     <div                      
                      v-for="(message, i) in currentChat"
-                     :class="message.status === 'sent' ? 'app__chat__message--box__text--right' : 'app__chat__message--box__text--left'"
+                     :class="message.status"
                     >
                         <!-- message text -->
                         <p>{{ currentChat[i].message }}</p>
