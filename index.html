@@ -74,7 +74,7 @@
                         <img class="app__sidebar__contacts__card__img" :src="contact.avatar"  alt="">
                         <div class="app__sidebar__contacts__card__name">
                             <p class="app__sidebar__contacts__card__name__nickname">{{ contact.name }}</p>
-                            <p class="app__sidebar__contacts__card__name__info">ultimo messaggio inviato</p>            
+                            <p class="app__sidebar__contacts__card__name__info">{{lastMessage(contact.messages)}}</p>
                         </div>
                         <p class="app__sidebar__contacts__card__time">{{ lastAccess.toFixed(2) }} </p>
                     </div> 

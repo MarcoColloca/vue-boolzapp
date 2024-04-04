@@ -325,7 +325,19 @@ createApp({
             const dateTime = date + ' ' + time
             
             return dateTime
-        },        
+        }, 
+        
+
+        lastMessage(array){
+
+            let message = ''
+
+            for(i = 0; i < array.length; i++){
+                message = array[array.length-1].message
+            }
+
+            return message
+        },
     }
 }).mount('#app')
 
