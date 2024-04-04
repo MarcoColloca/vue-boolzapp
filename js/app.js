@@ -189,6 +189,7 @@ createApp({
 
             currentObjectIndex: 0,            
             currentMessageIndex: 0,
+
             lastAccess: 12,
 
             messageText: '',
@@ -200,10 +201,12 @@ createApp({
 
 
     computed:{
+        // funzione che rappresenta il contatto all'indice corrente
         currentContact(){
             return this.contacts[this.currentObjectIndex]
         },
 
+        // funzione che rappresenta l'array messages del contatto all'indice corrente
         currentChat(){
             return this.currentContact.messages
         },
@@ -212,13 +215,14 @@ createApp({
 
     methods:{
 
+        // funzione che permette cambia un parametro di contacts al cambiare dell'index, ha il compito di legare i contatti della sidebar ai vari elementi nella pagina
         activeElement(index){
 
             this.currentObjectIndex = index;
 
         },
 
-
+        // funzione che permette di creare un messaggio, ottenendo una risposta fissa, quando si scrive nella chatBox e si preme invio
         newMessage(){
 
             const contacts = this.contacts;
@@ -259,7 +263,7 @@ createApp({
             };
         },
 
-
+        // funzione che va a modifiare il parametro visible all'interno di contacts quando ciò che viene scritto nella searchBar della sideBar non è presente al'interno del parametro "name" negli oggetti dell'array contacts
         searchContact(){
 
             for(i = 0; i < this.contacts.length; i++){
@@ -277,13 +281,14 @@ createApp({
            
         },
 
-
+        // funzione che elimina un elemento da un Array dati 3 parametri, in questo caso utilizzato per eliminare i messaggi dalla chat
         deleteMessage(array, index, elementsRemoved){
 
             array.splice(index, elementsRemoved)
 
         },
 
+        // funzione che recupera la data di oggi e la ritorna in un formato specifico
         myDate(){
 
             const currentDate = new Date();
@@ -327,7 +332,7 @@ createApp({
             return dateTime
         }, 
         
-
+        // funzione che dato un array, permette di recuperare un elemento specifico posto alla fine di quell'array, in questo caso l'ultimo messaggio
         lastMessage(array){
 
             let message = ''
@@ -339,7 +344,7 @@ createApp({
             return message
         },
 
-
+        // funzione che dato un array, permette di recuperare un elemento specifico posto alla fine di quell'array, in questo caso l'ultima data
         lastDate(array){
             let date = ''
 
