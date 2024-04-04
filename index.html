@@ -71,10 +71,10 @@
                     >
                         <img class="app__sidebar__contacts__card__img" :src="contact.avatar"  alt="">
                         <div class="app__sidebar__contacts__card__name">
-                            <p class="app__sidebar__contacts__card__name__nickname">{{contact.name}}</p>
+                            <p class="app__sidebar__contacts__card__name__nickname">{{ contact.name }}</p>
                             <p class="app__sidebar__contacts__card__name__info">ultimo messaggio inviato</p>            
                         </div>
-                        <p class="app__sidebar__contacts__card__time">{{lastAccess.toFixed(2)}} </p>
+                        <p class="app__sidebar__contacts__card__time">{{ lastAccess.toFixed(2) }} </p>
                     </div> 
                 </div>
             </header>
@@ -93,8 +93,8 @@
                     >
 
                     <div class="app__chat__topbar--info">
-                        <p class="app__chat__topbar--info__name">{{ contact.name}}</p>
-                        <p class="app__chat__topbar--info__last-access">Ultimo accesso oggi alle {{lastAccess.toFixed(2)}}</p>
+                        <p class="app__chat__topbar--info__name">{{ contact.name }}</p>
+                        <p class="app__chat__topbar--info__last-access">Ultimo accesso oggi alle {{ lastAccess.toFixed(2) }}</p>
                     </div>
 
                     <ul class="app__chat__topbar--interaction">
