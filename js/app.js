@@ -338,6 +338,17 @@ createApp({
 
             return message
         },
+
+
+        lastDate(array){
+            let date = ''
+
+            for(i = 0; i < array.length; i++){
+                date = array[array.length-1].date
+            }
+
+            return date
+        },
     }
 }).mount('#app')
 

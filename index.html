@@ -76,7 +76,7 @@
                             <p class="app__sidebar__contacts__card__name__nickname">{{ contact.name }}</p>
                             <p class="app__sidebar__contacts__card__name__info">{{lastMessage(contact.messages)}}</p>
                         </div>
-                        <p class="app__sidebar__contacts__card__time">{{ lastAccess.toFixed(2) }} </p>
+                        <p class="app__sidebar__contacts__card__time">{{ lastDate(contact.messages).slice(11, 16)}}</p>
                     </div> 
                 </div>
             </header>
