@@ -219,14 +219,30 @@ createApp({
     },
 
 
+    watch:{
+        currentObjectIndex(newIndex){
+            //console.log(newIndex)          
+        },
+    },
+
     methods:{
 
         // funzione che permette cambia un parametro di contacts al cambiare dell'index, ha il compito di legare i contatti della sidebar ai vari elementi nella pagina
         activeElement(index){
 
             this.currentObjectIndex = index;
+        },
+
+        getActiveClass(index){
+
+            if(this.currentObjectIndex === index){
+               return 'active'
+            }else{
+                return ''
+            }
 
         },
+
 
         // funzione che permette di creare un messaggio, ottenendo una risposta fissa, quando si scrive nella chatBox e si preme invio
         newMessage(){
@@ -268,6 +284,8 @@ createApp({
                     contacts[currentObjectIndex].messages.push(newRecievedMessage);
     
                 },1000);
+
+                console.log(newSentMessage)
             };
         },
 
@@ -303,7 +321,7 @@ createApp({
             const currentDate = new Date();
             
             let day = currentDate.getDay();
-            let month = currentDate.getMonth();
+            let month = currentDate.getMonth() + 1;
             const year = currentDate.getFullYear();
             let hours = currentDate.getHours();
             let minutes = currentDate.getMinutes();
@@ -346,9 +364,12 @@ createApp({
 
             let message = '';
 
-            for(i = 0; i < array.length; i++){
+            console.log(array.length)
+
+            if(array.length !== 0){
                 message = array[array.length-1].message
-            };
+            }
+            
 
             return message;
         },
