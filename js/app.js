@@ -190,8 +190,6 @@ createApp({
             currentObjectIndex: 0,            
             currentMessageIndex: 0,
 
-            lastAccess: 12,
-
             messageText: '',
 
             searchBarText: '',
@@ -364,7 +362,7 @@ createApp({
 
             let message = '';
 
-            
+
             if(array.length !== 0){
                 message = array[array.length-1].message
             } else {
@@ -385,6 +383,26 @@ createApp({
 
             return date;
         },
+
+        // funzione che genera un orario casuale da 00.00 a 24.59 
+        randomTime(){
+
+            let hours = Math.floor(Math.random() * 24 + 1);
+            let minutes = Math.floor(Math.random() * 60);
+
+            if(hours < 10){
+                hours = '0' + hours;
+            }
+
+            if(minutes < 10){
+                minutes = '0' + minutes;
+            }
+
+
+            const time = hours + '.' + minutes;
+
+            return time
+        }
     }
 }).mount('#app')
 
