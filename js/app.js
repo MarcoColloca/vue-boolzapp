@@ -234,6 +234,7 @@ createApp({
             this.currentObjectIndex = index;
         },
 
+        // funzione che ritorna come risultato la stringa active (utilizzata come classe) quando l'index fornito come parametro è uguale al currentObjectIndex presente nei data       
         getActiveClass(index){
 
             if(this.currentObjectIndex === index){
@@ -363,9 +364,11 @@ createApp({
 
             let message = '';
 
-
+            
             if(array.length !== 0){
                 message = array[array.length-1].message
+            } else {
+                message = `Non ci sono messaggi in questa chat.`
             }
             
 
