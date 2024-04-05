@@ -67,6 +67,7 @@
                     <div 
                      class="app__sidebar__contacts__card"
                      v-for="(contact,i) in contactsFilter"
+                     :class="i === currentObjectIndex ? 'active' : ''"
                      @click="activeElement(i)"
                     >
                         <img class="app__sidebar__contacts__card__img" :src="contact.avatar"  alt="">
