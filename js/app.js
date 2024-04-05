@@ -242,7 +242,7 @@ createApp({
                 // creazione di un oggetto che corrisponde ad un messaggio inviato
                 const newSentMessage = {
                     date: this.myDate(),
-                    message: this.messageText,
+                    message: messageText,
                     status: 'sent'
                 };
                 // inserimento del messaggio inviato nell'array messages
@@ -252,15 +252,17 @@ createApp({
                 // pulizia della chat
                 this.messageText = '';
 
-                // creazione di un oggetto che corrisponde ad un messaggio ricevuto
-                const newRecievedMessage = {
-                    date: this.myDate(),
-                    message: '(ง•̀_•́)ง',
-                    status: 'received'
-                };
+                
 
                 // funzione che incoda il codice da eseguire con un ritardo teorico di 1000 ms
-                setTimeout(function(){
+                setTimeout(() => {
+
+                    // creazione di un oggetto che corrisponde ad un messaggio ricevuto
+                    const newRecievedMessage = {
+                        date: this.myDate(),
+                        message: '(ง•̀_•́)ง',
+                        status: 'received'
+                    };
 
                     // inserimento del messaggio ricevuto nell'array messages
                     contacts[currentObjectIndex].messages.push(newRecievedMessage);
