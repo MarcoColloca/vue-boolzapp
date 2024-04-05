@@ -220,8 +220,9 @@ createApp({
 
 
     watch:{
+        // wathcer che controlla il current ObjectIndex (usato solo per testare il funzionamento dei watchers)
         currentObjectIndex(newIndex){
-            //console.log(newIndex)          
+            console.log(newIndex)          
         },
     },
 
@@ -284,8 +285,6 @@ createApp({
                     contacts[currentObjectIndex].messages.push(newRecievedMessage);
     
                 },1000);
-
-                console.log(newSentMessage)
             };
         },
 
@@ -364,7 +363,6 @@ createApp({
 
             let message = '';
 
-            console.log(array.length)
 
             if(array.length !== 0){
                 message = array[array.length-1].message
