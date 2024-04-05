@@ -331,7 +331,7 @@ body{
 
     .app__sidebar__contacts__card:hover{
         background-color: #00000010;
-        color: rgb(255, 0, 0);
+        color: rgb(99, 32, 255);
     }
 
     .app__sidebar__contacts__card:active{
@@ -677,6 +677,7 @@ body{
 
 .active{
     background-color: #D5FABA;
+    color: rgb(99, 32, 255);
 }
 
 
