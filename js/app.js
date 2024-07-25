@@ -252,7 +252,7 @@ createApp({
         // funzione che permette di creare un messaggio, ottenendo una risposta fissa, quando si scrive nella chatBox e si preme invio
         newMessage(){
 
-            const contacts = this.contacts;
+            const contacts = this.filteredContacts;
             const currentObjectIndex = this.currentObjectIndex;
             const messageText = this.messageText;
 
