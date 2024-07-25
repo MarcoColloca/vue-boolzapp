@@ -194,25 +194,30 @@ createApp({
 
             searchBarText: '',
 
+            filteredContacts: [],
         }
     },
 
+    created(){
+        this.getContacts;
+    },
 
     computed:{
         // computed che rappresenta il contatto all'indice corrente
-        currentContact(){
-            return this.contacts[this.currentObjectIndex];
+        currentContact(){            
+            return this.filteredContacts[this.currentObjectIndex];
         },
 
         // computed che rappresenta l'array messages del contatto all'indice corrente
         currentChat(){
+            
             return this.currentContact.messages;
         },
 
         // computed che tenendo in considerazione le variabili this.contacts e this.searchBarText, 
         // ritorna un array secondario con all'interno solo oggetti che abbiano la loro proprietà nome che contenga le lettere inserite all'interno della serachBar.
         contactsFilter() {
-            return this.contacts.filter(contact => contact.name.toLowerCase().includes(this.searchBarText.toLowerCase()));
+            return this.filteredContacts = this.contacts.filter(contact => contact.name.toLowerCase().includes(this.searchBarText.toLowerCase()));
         },
     },
 
@@ -228,7 +233,7 @@ createApp({
 
         // funzione che permette cambia un parametro di contacts al cambiare dell'index, ha il compito di legare i contatti della sidebar ai vari elementi nella pagina
         activeElement(index){
-
+            this.currentObjectIndex = 0;
             this.currentObjectIndex = index;
         },
 
@@ -402,6 +407,14 @@ createApp({
             const time = hours + '.' + minutes;
 
             return time
+        },
+
+        getContacts(){
+            this.filteredContacts = this.contacts;
+        },
+
+        resetObjIndex(){
+            this.currentObjectIndex = 0;
         }
     }
 }).mount('#app')

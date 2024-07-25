@@ -57,6 +57,7 @@
                      class="app__sidebar__searchbar__text-box" 
                      type="search" 
                      placeholder=" Cerca o inizia una nuova chat"
+                     @keyup="resetObjIndex"
                      v-model="searchBarText"
                     >
                 </div>
